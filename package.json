@@ -1,0 +1,21 @@
+{
+  "name": "rxjs_in_x_lessons",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest \\.spec\\.ts"
+  },
+  "dependencies": {
+    "rxjs": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/jsdom": "^16.2.13",
+    "esm": "^3.2.25",
+    "jest": "^27.0.6",
+    "jest-marbles": "^2.5.1",
+    "jsdom": "^16.7.0",
+    "rxjs-marbles": "^7.0.1",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  }
+}
