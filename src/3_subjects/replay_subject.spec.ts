@@ -3,13 +3,13 @@ import { ReplaySubject } from 'rxjs';
 describe('ReplaySubject', () => {
 
     it('should inform all subscribers', () => {
-        const distributor$: ReplaySubject<number> = new ReplaySubject<number>(2);
+        const subject$: ReplaySubject<number> = new ReplaySubject<number>(2);
 
-        distributor$.next(1);
-        distributor$.next(2);
-        distributor$.next(3);
-        distributor$.subscribe({next: (v) => console.log(`A: ${v}`)});
-        distributor$.next(4);
+        subject$.next(1);
+        subject$.next(2);
+        subject$.next(3);
+        subject$.subscribe({next: (v) => console.log(`A: ${v}`)});
+        subject$.next(4);
 
         // A: 2
         // A: 3
@@ -17,18 +17,18 @@ describe('ReplaySubject', () => {
     });
 
     it('should inform all subscribers time based', (done) => {
-        const distributor$: ReplaySubject<number> = new ReplaySubject<number>(10, 200);
+        const subject$: ReplaySubject<number> = new ReplaySubject<number>(10, 200);
         let value = 0;
 
-        const interval = setInterval(() => distributor$.next(value++), 100);
+        const interval = setInterval(() => subject$.next(value++), 100);
         setTimeout(() => {
-            distributor$.subscribe({next: (v) => console.log(`A: ${v}`)});
+            subject$.subscribe({next: (v) => console.log(`A: ${v}`)});
         }, 450);
 
 
         setTimeout(() => {
             clearInterval(interval);
-            distributor$.unsubscribe();
+            subject$.unsubscribe();
             done();
         }, 1000)
 

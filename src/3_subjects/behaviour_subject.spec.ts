@@ -3,13 +3,13 @@ import { BehaviorSubject } from 'rxjs';
 describe('BehaviourSubject', () => {
 
     it('should inform all subscribers (also about the last value)', () => {
-        const distributor$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+        const subject$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-        distributor$.subscribe({ next: (v) => console.log(`A: ${v}`)});
-        distributor$.next(1);
-        distributor$.next(2);
-        distributor$.subscribe({ next: (v) => console.log(`B: ${v}`)});
-        distributor$.next(3);
+        subject$.subscribe({ next: (v) => console.log(`A: ${v}`)});
+        subject$.next(1);
+        subject$.next(2);
+        subject$.subscribe({ next: (v) => console.log(`B: ${v}`)});
+        subject$.next(3);
 
         // A: 0
         // A: 1
