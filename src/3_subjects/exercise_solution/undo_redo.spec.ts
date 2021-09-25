@@ -1,16 +1,16 @@
 import { Observable, ReplaySubject } from 'rxjs';
 import { testScheduler } from '../../misc/test_scheduler';
 
-type ActionTypes = 'COPY' | 'CUT' | 'PASTE' | 'DELETE';
+type ActionType = 'COPY' | 'CUT' | 'PASTE' | 'DELETE';
 
 class Redo {
-    private static readonly $actions: ReplaySubject<ActionTypes> = new ReplaySubject<ActionTypes>(5, 10_000);
+    private static readonly $actions: ReplaySubject<ActionType> = new ReplaySubject<ActionType>(5, 10_000);
 
-    static addAction(action: ActionTypes) {
+    static addAction(action: ActionType) {
         Redo.$actions.next(action);
     }
 
-    static redo(): Observable<ActionTypes> {
+    static redo(): Observable<ActionType> {
         return Redo.$actions.asObservable();
     }
 };
