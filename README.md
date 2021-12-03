@@ -14,5 +14,7 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#7 bindCallback & bindNodeCallback](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/7_bindCallback_bindNodeCallback)<br/>
 [#8 defer](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/8_defer)<br/>
 [#9 EMPTY](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/9_empty)<br/>
-[#10 from](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/10_from)
+[#10 from](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/10_from)<br/>
+[#11 fromEvent](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/11_fromEvent)<br/>
+[#12 fromEventPattern](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/12_fromEventPattern)<br/>
 
