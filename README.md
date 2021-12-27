@@ -2,6 +2,13 @@
 
 Code examples for the RxJs concepts [ronnieschaniel.com/rxjs](https://ronnieschaniel.com/rxjs/).
 
+**In the articles you find:**<br/>
+🎓 The RxJs concept explained <br/>
+🚧 Information about what problems can be solved <br/>
+🚦 How to test properly <br/>
+💪 Exercise that allows you to further explore the discussed RxJs concept <br/> 
+ 
+
 ## Overview <br />
 Examples, tests and exercises with solution to all the RxJs concepts:
 
