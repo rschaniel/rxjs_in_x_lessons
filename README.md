@@ -31,4 +31,5 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#15 of](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/15_of)<br/>
 [#16 range](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/16_range)<br/>
 [#17 throwError](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/17_throwError)<br/>
+[#18 timer](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/18_timer)<br/>
 
