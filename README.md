@@ -32,7 +32,7 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#16 range](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/16_range)<br/>
 [#17 throwError](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/17_throwError)<br/>
 [#18 timer](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/18_timer)<br/>
-[#18 iif](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/19_iif)<br/>
+[#19 iif](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/19_iif)<br/>
 
 ### Join Creation Operators
 coming soon
