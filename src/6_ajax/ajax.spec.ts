@@ -20,6 +20,21 @@ describe('ajax', () => {
             });
     });
 
+    it('should create an Observable for a GET request that returns a 404', (done) => {
+        const githubUsers$ = ajax(`https://api.github.com/usders?per_page=5`);
+
+        githubUsers$
+            .pipe(map(result => result.response))
+            .subscribe(response => {
+                console.log(response);
+                done();
+            }, error => {
+                console.log('An error occurred');
+                console.log(error);
+                done();
+            });
+    });
+
     it('should create an Observable for a GET json request', (done) => {
         const githubUsers$: Observable<GitHubUser[]> =
             ajax.getJSON<GitHubUser[]>(`https://api.github.com/users?per_page=5`);

@@ -38,6 +38,24 @@ describe('bindCallback and bindNodeCallback', () => {
         })
     });
 
+
+    const multiplier = (input: number, input2: number, callback: (result: number) => void) => {
+        setTimeout(() => {
+            callback(input * input2);
+        }, 1000);
+    };
+
+    it('should bind with multiple inputs (partial application)', (done) => {
+        const multiplication$ = bindCallback(multiplier)(5,3);
+
+        multiplication$.subscribe({
+            next: (val) => {
+                expect(val).toEqual(15);
+                done();
+            }
+        })
+    });
+
     it('should bind with a node callback too', (done) => {
         const multiplier = (input: number, input2: number, callback: (error: string | undefined, result: number) => void) => {
             setTimeout(() => {
