@@ -1,7 +1,7 @@
 import { of, Observable, throwError, asyncScheduler } from 'rxjs';
 import { testScheduler } from '../misc/test_scheduler';
-import { combineLatest } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 
 describe('combineLatest', () => {
@@ -67,5 +67,23 @@ describe('combineLatest', () => {
             '(ab)'.length === 4.
              */
         });
+    });
+
+    it('should return the RGB value', () => {
+        const initialValue = 0;
+        const red$ = new BehaviorSubject<number>(initialValue);
+        const green$ = new BehaviorSubject<number>(initialValue);
+        const blue$ = new BehaviorSubject<number>(initialValue);
+
+        const rgb$ = combineLatest(red$, green$, blue$).pipe(
+            map(([r, g, b]: [number, number, number]) => `rgb(${r},${g},${b})`)
+        );
+
+        rgb$.subscribe(result => console.log(result));
+
+        green$.next(100);
+        blue$.next(255);
+        green$.next(50);
+        red$.next(10);
     });
 });
