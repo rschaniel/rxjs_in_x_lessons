@@ -35,13 +35,15 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#19 iif](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/19_iif)<br/>
 
 ### Join Creation Operators
-[#20_combineLatest](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/20_combineLatest)<br/>
-[#21_concat](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/21_concat)<br/>
-[#22_forkJoin](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/22_forkJoin)<br/>
-[#23_merge](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/23_merge)<br/>
-[#24_partition](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/24_partition)<br/>
-[#25_race](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/25_race)<br/>
-[#26_zip](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/26_zip)<br/>
+[#20 combineLatest](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/20_combineLatest)<br/>
+[#21 concat](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/21_concat)<br/>
+[#22 forkJoin](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/22_forkJoin)<br/>
+[#23 merge](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/23_merge)<br/>
+[#24 partition](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/24_partition)<br/>
+[#25 race](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/25_race)<br/>
+[#26 zip](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/26_zip)<br/>
 
+### Transformation Operators
+map, buffer, groupBy, and co. coming next
 
 
