@@ -4,22 +4,31 @@ import { testScheduler } from '../misc/test_scheduler';
 import { take } from 'rxjs/operators';
 
 
-describe('forkJoin', () => {
+describe('merge', () => {
+
+    it('merging two input observables', () => {
+        const mergeResult$ = merge(
+            interval(1000).pipe(take(3)),
+            interval(1000).pipe(take(2)),
+        );
+
+        mergeResult$.subscribe(console.log);
+        // 0, 0, 1, 1, 2
+    });
 
     it('marbles testing', () => {
         testScheduler.run((helpers) => {
             const { expectObservable } = helpers;
 
-            const concatResult$ = merge(
+            const mergeResult$ = merge(
                 interval(1000).pipe(take(3)),
-                of(3, 4),
+                interval(1000).pipe(take(2)),
             );
 
-            expectObservable(concatResult$).toBe(
-                '1s a 999ms b 999ms (cde|)',
-                { a: 0, b: 1, c: 2, d: 3, e: 4}
-            );
-
+            expectObservable(mergeResult$).toBe(
+                '1s (aa) 996ms (bb) 996ms (c|)',
+                { a: 0, b: 1, c: 2}
+            )
         });
     });
 });
