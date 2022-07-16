@@ -19,4 +19,25 @@ describe('partition', () => {
         setTimeout(() => done(), 3000);
         // 0, 2, 1, 4, 3, 5
     });
+
+    it('subscribing with logs', () => {
+        let subscriberCount = 0;
+        const inputObservable$ = new Observable<number>((subscriber) => {
+            console.log('subscription happened');
+            subscriberCount++;
+            subscriber.next(1);
+            subscriber.next(2);
+            subscriber.next(3);
+            subscriber.complete();
+        });
+
+        const [evens$, odds$] = partition(
+            inputObservable$,
+            x => x % 2 === 0
+        );
+
+        evens$.subscribe();
+        odds$.subscribe();
+        expect(subscriberCount).toEqual(2);
+    });
 });
