@@ -25,7 +25,7 @@ describe('race', () => {
         winner$.subscribe({ next: console.log, complete: () => done() });
     });
 
-    it('should use the winner', (done) => {
+    it('should use the winner when calling multiple APIs', (done) => {
         const response$ = race(
            ajax('http://api-a.ronnieschaniel.com/api/articles'),
            ajax('http://api-b.ronnieschaniel.com/api/articles'),
