@@ -43,6 +43,34 @@ describe('combineLatest', () => {
     });
 
 
+    it('should not emit v', () => {
+        testScheduler.run((helpers) => {
+            const { expectObservable, cold } = helpers;
+
+            expectObservable(combineLatest(
+                cold(        '--q-----r|'),
+                cold(        'vwx----y|')
+            ).pipe(
+                tap(console.log))
+            ).toBe('--(ab)-cd|',
+                {
+                         a: ['q', 'w'],
+                         b: ['q', 'x'],
+                         c: ['q', 'y'],
+                         d: ['r', 'y'],
+                }
+            );
+
+            /*
+            Attention:
+            (ab) emits values a and b synchronously in the same frame
+            and then advance virtual time by 4 frames. This is because
+            '(ab)'.length === 4.
+             */
+        });
+    });
+
+
     it('should also handle 3 inputs', () => {
         testScheduler.run((helpers) => {
             const { expectObservable, cold } = helpers;
