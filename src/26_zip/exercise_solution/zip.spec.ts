@@ -11,7 +11,7 @@ describe('zip', () => {
         const result$ = zip(
             frameworks$,
             yearOfIntroduction$,
-            (framework, year) => `${framework} was introduce in ${year}`
+            (framework, year) => `${framework} was introduced in ${year}`
         );
 
         result$.subscribe(console.log);
