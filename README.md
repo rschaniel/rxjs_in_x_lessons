@@ -44,6 +44,9 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#26 zip](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/26_zip)<br/>
 
 ### Transformation Operators
-map, buffer, groupBy, and co. coming next
+[#27 buffer](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/27_buffer)<br/>
+[#28 concatMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/28_concatMap_concatMapTo)<br/>
+[#29 exhaustMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/29_exhaustMap)<br/>
+[#30 expand](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/30_expand)<br/>
 
 
