@@ -48,5 +48,6 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#28 concatMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/28_concatMap_concatMapTo)<br/>
 [#29 exhaustMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/29_exhaustMap)<br/>
 [#30 expand](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/30_expand)<br/>
+[#31 groupBy](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/31_groupBy)<br/>
 
 
