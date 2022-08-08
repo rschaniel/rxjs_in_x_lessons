@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+</head>
+<body>
+    <p>
+        Duration: <br/>
+        <span id="duration"></span>
+    </p>
+    <script>
+        const fromEvent = rxjs.fromEvent;
+        const mergeScan = rxjs.mergeScan;
+        const interval = rxjs.interval;
+        const scan = rxjs.scan;
+        const map = rxjs.map;
+        const takeUntil = rxjs.takeUntil;
+
+
+        const keyDown$ = fromEvent(document, 'keydown');
+        const keyUp$ = fromEvent(document, 'keyup');
+
+        const duration = document.getElementById('duration');
+
+        keyDown$.pipe(
+            mergeScan((acc, curr) => {
+                return interval(1000).pipe(
+                    scan((a, _) => ++a, 0),
+                    map((val) => val + acc),
+                    takeUntil(keyUp$)
+                );
+            }, 0)
+        ).subscribe(val => (duration.innerHTML = `${val}s`));
+    </script>
+</body>
