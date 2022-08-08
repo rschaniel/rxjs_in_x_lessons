@@ -50,5 +50,6 @@ Examples, tests and exercises with solution to all the RxJs concepts:
 [#30 expand](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/30_expand)<br/>
 [#31 groupBy](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/31_groupBy)<br/>
 [#32 map](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/32_map)<br/>
+[#33 mergeMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/33_mergeMap)<br/>
 
 
