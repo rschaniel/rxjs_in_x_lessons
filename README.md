@@ -1,16 +1,16 @@
-# RxJs in 73 lessons
+# RxJS Mastery
 
-Code examples for the RxJs concepts [ronnieschaniel.com/rxjs](https://ronnieschaniel.com/rxjs/).
+Code examples for the RxJS concepts [ronnieschaniel.com/rxjs](https://ronnieschaniel.com/rxjs/).
 
 **In the articles you find:**<br/>
-🎓 The RxJs concept explained <br/>
+🎓 The RxJS concept explained <br/>
 🚧 Information about what problems can be solved <br/>
 🚦 How to test properly <br/>
-💪 Exercise that allows you to further explore the discussed RxJs concept <br/> 
+💪 Exercise that allows you to further explore the discussed RxJS concept <br/> 
  
 
 ## Overview <br />
-Examples, tests and exercises with solution to all the RxJs concepts:
+Examples, tests and exercises with solution to all the RxJS concepts:
 
 [#1 Reactive Programming](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/1_reactive_programming)<br/>
 [#2 Observables](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/2_observable)<br/>
