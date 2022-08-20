@@ -1,46 +1,41 @@
 import { of, GroupedObservable, Observable, fromEvent, EMPTY, throwError } from 'rxjs';
-import { bufferCount, filter, pairwise } from 'rxjs/operators';
-import { testScheduler } from '../misc/test_scheduler';
+import { scan } from 'rxjs/operators';
 
 
-describe('pairwise', () => {
+describe('scan', () => {
 
-    it('should emit pairs', () => {
+    it('should continuously execute the reducer function', () => {
         of(1,2,3,4).pipe(
-            pairwise()
+            scan((acc, curr) => acc + curr, 0)
         ).subscribe(console.log);
 
-        // [1,2]
-        // [2,3]
-        // [3,4]
+        // 1
+        // 3
+        // 6
+        // 10
     });
 
-    it('should emit nothing', () => {
-        testScheduler.run((helpers) => {
-            const {expectObservable} = helpers;
-
-            const result$ = of(1).pipe(
-                pairwise()
-            );
-
-            expectObservable(result$).toBe('|');
-        });
-    });
-
-    it('should also not emit anything', () => {
-        EMPTY.pipe(
-            pairwise()
-        ).subscribe(console.log);
-    });
-
-    it('is different to bufferCount', () => {
+    it('should work without seed value', () => {
         of(1,2,3,4).pipe(
-            bufferCount(2, 1),
-            filter(arr => arr.length === 2),
+            scan((acc, curr) => acc + curr)
         ).subscribe(console.log);
 
-        // [1,2]
-        // [2,3]
-        // [3,4]
+        // 1
+        // 3
+        // 6
+        // 10
+    });
+
+    it('can keep a state', () => {
+        of(1,15,7,3,20,2).pipe(
+            scan((acc, curr) => acc > curr ? acc : curr)
+        ).subscribe(console.log);
+
+        // 1
+        // 15
+        // 15
+        // 15
+        // 20
+        // 20
     });
 });
