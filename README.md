@@ -53,5 +53,7 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#33 mergeMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/33_mergeMap)<br/>
 [#34 mergeScan](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/34_mergeScan)<br/>
 [#35 pairwise](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/35_pairwise)<br/>
+[#36 scan](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/36_scan)<br/>
+[#37 switchScan](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/37_switchScan)<br/>
 
 
