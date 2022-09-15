@@ -56,5 +56,9 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#36 scan](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/36_scan)<br/>
 [#37 switchScan](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/37_switchScan)<br/>
 [#38 switchMap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/38_switchMap)<br/>
+[#39 window](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/39_window)<br/>
+
+### Filtering Operators
+coming soon
 
 
