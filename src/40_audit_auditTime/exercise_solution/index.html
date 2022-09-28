@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+</head>
+<body>
+    <div>
+        Inputs: <br/>
+        <p id="inputs"></p>
+
+        Marked<span id="markedNotification" style="display:none;">&nbsp;marked!</span>:<br/>
+        <p id="marked"></p>
+    </div>
+    <script>
+        const inputs = document.getElementById('inputs');
+        const marked = document.getElementById('marked');
+        const markedNotification = document.getElementById('markedNotification');
+
+        const showMarkedNotification = () => {
+          markedNotification.style.display = 'inline-block';
+          setTimeout(() => {
+              markedNotification.style.display = 'none';
+          }, 700);
+        };
+
+        const javascriptWindowMethodsAndFields = [];
+        for (let field in window) {
+            javascriptWindowMethodsAndFields.push(field.toString());
+        }
+
+        const audit = rxjs.audit;
+        const filter = rxjs.filter;
+        const fromEvent = rxjs.fromEvent;
+        const from = rxjs.from;
+        const interval = rxjs.interval;
+        const tap = rxjs.tap;
+        const zip = rxjs.zip;
+
+        const enterKeyEvents$ = fromEvent(document, 'keydown').pipe(
+            filter(e => e.keyCode === 13),
+        );
+
+        const source$ = zip(
+            from(javascriptWindowMethodsAndFields),
+            interval(1000),
+            (val, _) => val
+        );
+
+        source$.pipe(
+            tap(v => inputs.append(v + ', ')),
+            audit(_ => enterKeyEvents$.pipe(tap(_ => showMarkedNotification()))),
+            tap(v => marked.append(v + ', ')),
+        ).subscribe();
+    </script>
+</body>
