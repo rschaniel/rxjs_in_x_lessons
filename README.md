@@ -60,5 +60,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 
 ### Filtering Operators
 [#40 audit & auditTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/40_audit_auditTime)<br/>
+[#41 debounce & debounceTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/41_debounce_debounceTime)<br/>
 
 

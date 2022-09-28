@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+</head>
+<body>
+    <div style="background: red; height: 3000px; margin-bottom: 100px; display: block;"></div>
+    <script>
+        const debounceTime = rxjs.debounceTime;
+        const fromEvent = rxjs.fromEvent;
+
+        const scrollEvent$ = fromEvent(window, 'scroll');
+
+        scrollEvent$.subscribe({next: console.log});
+    </script>
+</body>
