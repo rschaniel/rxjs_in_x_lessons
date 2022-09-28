@@ -59,6 +59,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#39 window](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/39_window)<br/>
 
 ### Filtering Operators
-coming soon
+[#40 audit & auditTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/40_audit_auditTime)<br/>
 
 
