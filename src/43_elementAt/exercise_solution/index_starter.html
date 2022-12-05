@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+</head>
+<body>
+<div id="hideByClick" style="background: red; height: 300px; margin-bottom: 100px; display: block;"></div>
+<script>
+    const elementAt = rxjs.elementAt;
+    const fromEvent = rxjs.fromEvent;
+
+    const element = document.getElementById('hideByClick');
+    const clickEvents$ = fromEvent(element, 'click');
+
+</script>
+</body>
