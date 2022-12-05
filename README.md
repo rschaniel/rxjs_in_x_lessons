@@ -62,6 +62,7 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#40 audit & auditTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/40_audit_auditTime)<br/>
 [#41 debounce & debounceTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/41_debounce_debounceTime)<br/>
 [#42 distinct](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/42_distinct)<br/>
-[#42 elementAt](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/43_elementAt)<br/>
+[#43 elementAt](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/43_elementAt)<br/>
+[#44 filter](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/44_filter)<br/>
 
 

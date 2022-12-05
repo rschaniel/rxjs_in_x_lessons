@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+</head>
+<body>
+<div style="background: red; height: 300px; margin-bottom: 100px; display: block;">div content</div>
+<span>span content</span>
+<script>
+    const filter = rxjs.filter;
+    const fromEvent = rxjs.fromEvent;
+
+    const clickEvents$ = fromEvent(window, 'click');
+
+    clickEvents$.pipe(
+
+    ).subscribe({
+        next: (e) => console.log(e)
+    });
+</script>
+</body>
