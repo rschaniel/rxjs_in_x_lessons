@@ -64,5 +64,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#42 distinct](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/42_distinct)<br/>
 [#43 elementAt](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/43_elementAt)<br/>
 [#44 filter](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/44_filter)<br/>
+[#45 first](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/45_first)<br/>
 
 
