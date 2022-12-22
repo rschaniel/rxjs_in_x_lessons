@@ -65,5 +65,7 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#43 elementAt](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/43_elementAt)<br/>
 [#44 filter](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/44_filter)<br/>
 [#45 first](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/45_first)<br/>
+[#46_ignoreElements](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/46_ignoreElements)<br/>
+[#47 last](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/47_last)<br/>
 
 
