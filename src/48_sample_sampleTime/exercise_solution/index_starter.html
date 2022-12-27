@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+</head>
+<body>
+    <button style="margin: 10px; width: 100px; height: 30px;" id="prepare">Prepare!</button>
+    <button style="margin: 10px; width: 100px; height: 30px;" id="start">Start!</button>
+    <button style="margin: 10px; width: 100px; height: 30px;" id="check">Check!</button>
+    <p>
+        <span id="targetTime"></span> <br />
+        <span id="result"></span> <br />
+        <span id="timer"></span> <br />
+    </p>
+    <script>
+        const sample = rxjs.sample;
+        const fromEvent = rxjs.fromEvent;
+        const interval = rxjs.interval;
+        const tap = rxjs.tap;
+        const take = rxjs.take;
+        const targetTime = document.getElementById('targetTime');
+        const result = document.getElementById('result');
+        const timer = document.getElementById('timer');
+
+        const checkButton = document.getElementById('check');
+        const startButton = document.getElementById('start');
+        const prepareButton = document.getElementById('prepare');
+        let target = 10;
+
+        const clickEvents$ = fromEvent(checkButton, 'click');
+
+
+        prepareButton.addEventListener('click', () => {
+            target = Math.floor(Math.random() * 10);
+            targetTime.innerText = 'Target = ' + target;
+        });
+
+        startButton.addEventListener('click', () => {
+
+            // sample something
+
+        });
+    </script>
+</body>
