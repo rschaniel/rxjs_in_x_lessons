@@ -70,5 +70,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#48 sample & sampleTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/48_sample_sampleTime)<br/>
 [#49 single](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/49_single)<br/>
 [#50 skip](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/50_skip)<br/>
+[#51 take](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/51_take)<br/>
 
 

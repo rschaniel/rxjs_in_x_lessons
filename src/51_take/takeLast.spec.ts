@@ -1,22 +1,22 @@
 import { createTestScheduler } from '../misc/test_scheduler';
 import { interval } from 'rxjs';
-import { skipWhile, take } from 'rxjs/operators';
+import { take, takeLast } from 'rxjs/operators';
 
 
-describe('skipWhile', () => {
+describe('takeLast', () => {
 
-    it('skips the first values while a condition is true', () => {
+    it('emits the last x values', () => {
         createTestScheduler().run((helpers) => {
-            const {expectObservable, cold} = helpers;
+            const {expectObservable} = helpers;
 
             const result$ = interval(1).pipe(
                 take(5),
-                skipWhile(x => x < 2)
+                takeLast(2),
             );
 
             expectObservable(result$).toBe(
-                '---ab(c|)',
-                { a: 2, b: 3, c: 4 }
+                '-----(ab|)',
+                { a: 3, b: 4 }
             );
         });
     });
