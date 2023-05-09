@@ -74,6 +74,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#52 throttle & throttleTime](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/52_throttle_throttleTime)<br/>
 
 ### Join Operators
-coming soon
+[#53 combineLatestAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/53_combineLatestAll)<br/>
 
 
