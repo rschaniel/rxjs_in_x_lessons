@@ -77,5 +77,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#53 combineLatestAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/53_combineLatestAll)<br/>
 [#54 concatAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/54_concatAll)<br/>
 [#55 exhaustAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/55_exhaustAll)<br/>
+[#56_mergeAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/56_mergeAll)<br/>
 
 
