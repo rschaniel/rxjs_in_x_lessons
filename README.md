@@ -75,5 +75,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 
 ### Join Operators
 [#53 combineLatestAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/53_combineLatestAll)<br/>
+[#54 concatAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/54_concatAll)<br/>
 
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <script src="../../../node_modules/rxjs/dist/bundles/rxjs.umd.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        #main {
+            display:block;
+            width: 100%;
+            height: 100%;
+        }
+        .target {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: red;
+        }
+        .starter {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    </div>
+    <script>
+        const concatAll = rxjs.concatAll;
+        const fromEvent = rxjs.fromEvent;
+        const take = rxjs.take;
+        const tap = rxjs.tap;
+        const map = rxjs.map;
+        const interval = rxjs.interval;
+        const main = document.getElementById('main');
+
+        const clickEvents$ = fromEvent(main, 'click');
+        const handleClickEvent = ({event, i}) => {
+            const target = document.createElement("div");
+            target.classList = 'target';
+            target.style.left = event.clientX + i * 10 + 'px';
+            target.style.top = event.clientY + 'px';
+            main.appendChild(target);
+        };
+
+        const createStarter = (event) => {
+            const target = document.createElement("div");
+            target.classList = 'target starter';
+            target.style.left = event.clientX + 'px';
+            target.style.top = event.clientY + 'px';
+            main.appendChild(target);
+        };
+
+        clickEvents$.pipe(
+            tap(event => createStarter(event)),
+            map(event => interval(500).pipe(take(5), map(i => ({event, i}))))
+        ).pipe(concatAll()).subscribe({
+            next: (v) => handleClickEvent(v)
+        })
+    </script>
+</body>
