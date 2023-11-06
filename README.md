@@ -79,5 +79,6 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#55 exhaustAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/55_exhaustAll)<br/>
 [#56_mergeAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/56_mergeAll)<br/>
 [#57 switchAll](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/57_switchAll)<br/>
+[#58 startWith](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/58_startWith)<br/>
 
 
