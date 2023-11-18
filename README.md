@@ -82,4 +82,5 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#58 startWith](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/58_startWith)<br/>
 [#59 withLatestFrom](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/59_withLatestFrom)<br/>
 
-
+### Multicast, error handling and utility
+[#60 multicast operators](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/60_multicast_operators)<br/>
