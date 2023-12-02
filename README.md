@@ -85,3 +85,4 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 ### Multicast, error handling and utility
 [#60 multicast operators](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/60_multicast_operators)<br/>
 [#61 catchError](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/61_catchError)<br/>
+[#62 retry](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/62_retry)<br/>
