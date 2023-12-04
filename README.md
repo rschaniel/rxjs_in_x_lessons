@@ -89,3 +89,7 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#63 tap](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/63_tap)<br/>
 [#64 delay & delayWhen](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/64_delay_delayWhen)<br/>
 [#65 materialize & dematerialize](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/65_materialize_dematerialize)<br/>
+
+### General topics
+[Hot vs. Cold Observables](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/hot_vs_cold_observables)<br/>
+[Operator Patterns](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/operator_patterns)<br/>
