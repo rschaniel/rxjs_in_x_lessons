@@ -91,6 +91,7 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#65 materialize & dematerialize](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/65_materialize_dematerialize)<br/>
 [#66 observeOn](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/66_observeOn)<br/>
 [#67 subscribeOn](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/67_subscribeOn)<br/>
+[#68 timeInterval, timestamp, timeout, timeoutWith](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/68_time)<br/>
 
 ### General topics
 [Hot vs. Cold Observables](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/hot_vs_cold_observables)<br/>
