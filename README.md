@@ -97,3 +97,4 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 ### General topics
 [Hot vs. Cold Observables](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/hot_vs_cold_observables)<br/>
 [Operator Patterns](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/operator_patterns)<br/>
+[Testing approaches compared](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/rxjs_testing_approaches_compared)<br/>
