@@ -2,7 +2,8 @@
   "name": "rxjs_in_x_lessons",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest \\.spec\\.ts"
+    "test": "jest \\.spec\\.ts",
+    "lint": "npx eslint src/rxjs_eslint/**/*.ts"
   },
   "dependencies": {
     "rxjs": "^7.8.1"
@@ -11,6 +12,9 @@
     "@hirez_io/observer-spy": "^2.2.0",
     "@types/jest": "^26.0.24",
     "@types/jsdom": "^16.2.13",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-rxjs": "^5.0.3",
     "esm": "^3.2.25",
     "jest": "^29.7.0",
     "jest-auto-spies": "^3.0.0",
