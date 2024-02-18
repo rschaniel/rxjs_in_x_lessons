@@ -94,6 +94,7 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [#68 timeInterval, timestamp, timeout, timeoutWith](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/68_time)<br/>
 [#69 toArray](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/69_toArray)<br/>
 [#70 conditional and boolean operators](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/70_conditional_and_boolean_operators)<br/>
+[#71 mathematical and aggregator operators](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/71_mathematical_and_aggregator_operators)<br/>
 
 ### General topics
 [Hot vs. Cold Observables](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/hot_vs_cold_observables)<br/>
