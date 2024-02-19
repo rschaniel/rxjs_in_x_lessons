@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+    <h1>Post search</h1>
+    <article class="search-container">
+        <input id="search" type="text" placeholder="Search">
+    </article>
+    <div id="loading">Loading...</div>
+    <div id="errors"></div>
+    <article id="results">
+
+    </article>
+</main>
+<script type="application/javascript" src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
+<script type="module" src="/rxjs_in_x_lessons/dist/rxjs_patterns_search_input/search_input.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        searchify('search', 'results', 'loading');
+    });
+</script>
+</body>
+</html>

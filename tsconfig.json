@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2015",
+    "module": "es2015",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "noImplicitAny": false,
     "strictNullChecks": true,
-    "strict": true
+    "strict": true,
+    "outDir": "dist"
   },
   "include": [
     "./src/**/*",
