@@ -101,3 +101,4 @@ Examples, tests and exercises with solution to all the RxJS concepts:
 [Operator Patterns](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/operator_patterns)<br/>
 [Testing approaches compared](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/rxjs_testing_approaches_compared)<br/>
 [RxJS patterns: a robust HTTP-based search input](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/rxjs_patterns_search_input)<br/>
+[How to build streams](https://github.com/rschaniel/rxjs_in_x_lessons/tree/main/src/how_to_build_streams)<br/>
