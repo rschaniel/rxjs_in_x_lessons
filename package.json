@@ -6,7 +6,13 @@
     "lint": "npx eslint src/rxjs_eslint/**/*.ts"
   },
   "dependencies": {
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "body-parser": "^2.2.1",
+    "connect-busboy": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "fs-extra": "^11.3.3",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@hirez_io/observer-spy": "^2.2.0",
@@ -23,6 +29,7 @@
     "jsdom": "^16.7.0",
     "rxjs-marbles": "^7.0.1",
     "ts-jest": "^29.1.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "vite": "^7.3.0"
   }
 }
