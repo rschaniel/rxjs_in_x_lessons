@@ -78,7 +78,7 @@ const multiUpload = (dropAreaId: string, progressElementId: string) => {
                 if (response.type === 'download_load') {
                     output = 'Finished with status ' + response.status;
                 }
-                progressElement.insertAdjacentHTML('beforeend', output + '<br />');
+                progressElement.innerHTML = output;
             }
         });
 };
