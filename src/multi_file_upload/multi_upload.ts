@@ -1,6 +1,6 @@
 const { ajax } = rxjs.ajax;
-const { fromEvent, switchMap, debounceTime, distinctUntilChanged, tap, pluck, filter, map, startWith,
-    BehaviorSubject, timeout, catchError, retry } = rxjs;
+const { of, fromEvent, switchMap, tap, filter, map,
+    BehaviorSubject, timeout, catchError, mergeMap } = rxjs;
 
 const apiUrl = 'http://localhost:3030/upload';
 
@@ -16,7 +16,41 @@ const clearErrors = () => {
     displayError('');
 };
 
+interface UploadResult {
+    response: any;
+    fileName: string;
+}
+interface ResponseData {
+    type?: string;
+    loaded?: number;
+    total?: number;
+    status?: number;
+    fileSize?: number;
+    errorMessage?: string;
+}
+
+let progressMap = new Map<string, ResponseData>();
+
 const multiUpload = (dropAreaId: string, progressElementId: string) => {
+    const renderProgress = (element: HTMLElement, progressMap: Map<string, ResponseData>) => {
+        let output = '';
+        progressMap.forEach((value, key, _map) => {
+            if (value?.type === 'upload_loadstart') {
+                output += key + ' loaded ' + value.loaded + '<br />';
+            }
+            if (value?.type === 'upload_progress') {
+                output += key + ' loaded ' + value.loaded + '/' + value.total + '<br />';
+            }
+            if (value?.type === 'download_load') {
+                output += key + ' Finished with status ' + value.status + ' (total ' +  value.fileSize + ' bytes)<br />';
+            }
+            if (value?.errorMessage) {
+                output += key + ' Finished with error ' + value.errorMessage + '<br />';
+            }
+        });
+        element.innerHTML = output;
+    };
+
     if (!dropAreaId || !progressElementId) {
         console.error('Elements not provided');
         return;
@@ -33,7 +67,10 @@ const multiUpload = (dropAreaId: string, progressElementId: string) => {
     fromEvent(dropArea, 'dragover').pipe(tap((e: DragEvent) => e.preventDefault())).subscribe();
     fromEvent(dropArea, 'drop')
         .pipe(
-            tap(_ => progressElement.innerHTML = ''),
+            tap(_ => {
+                progressMap.clear();
+                progressElement.innerHTML = '';
+            }),
             filter((event: DragEvent) => event.dataTransfer && event.dataTransfer.files.length > 0),
             tap((event: DragEvent) => {
                 event.preventDefault();
@@ -47,38 +84,52 @@ const multiUpload = (dropAreaId: string, progressElementId: string) => {
                 }
             }),
             map((event: DragEvent) => Array.from(event.dataTransfer!.items).map(file => file.getAsFile())),
-            map((files) => {
+            mergeMap(files => files.map(file => file)),
+            map((file) => {
                 const formData = new FormData();
-                files.forEach((file, index) => formData.append('file' + index, file, file.name ?? 'file' + index));
-                return formData;
+                formData.append('file', file, file.name);
+                return { formData, fileName: file.name };
             }),
-            switchMap(formData => ajax<any>({
+            mergeMap(({ formData, fileName }) => ajax<any>({
                     url: `${apiUrl}`,
                     method: 'POST',
                     body: formData,
                     includeUploadProgress: true,
-                }),
+                }).pipe(
+                    map((response): UploadResult => {
+                        return {
+                            response,
+                            fileName
+                        }
+                    }),
+                    catchError(error => {
+                        return of({
+                            response: {
+                                errorMessage: error.message,
+                            },
+                            fileName,
+                        })
+                    }),
+                ),
             ),
-            catchError(error => {
-                console.error(error);
-                displayError(error);
-                return [];
-            })
         )
         .subscribe({
-            next: (response) => {
-                console.dir(response);
-                let output = '';
-                if (response.type === 'upload_loadstart') {
-                    output = 'Loaded ' + response.loaded;
+            next: ({ response,  fileName }) => {
+                progressMap.set(fileName, {
+                    ...progressMap.get(fileName),
+                    type: response.type,
+                    loaded: response.loaded,
+                    total: response.total,
+                    status: response.status,
+                    errorMessage: response.errorMessage,
+                });
+                if (response?.type === 'upload_load') {
+                    progressMap.set(fileName, {
+                        ...progressMap.get(fileName),
+                        fileSize: response.total,
+                    });
                 }
-                if (response.type === 'upload_progress') {
-                    output = 'Loaded ' + response.loaded + '/' + response.total;
-                }
-                if (response.type === 'download_load') {
-                    output = 'Finished with status ' + response.status;
-                }
-                progressElement.innerHTML = output;
+                renderProgress(progressElement, progressMap);
             }
         });
 };
