@@ -1,6 +1,6 @@
 const { ajax } = rxjs.ajax;
 const { of, fromEvent, switchMap, tap, filter, map,
-    BehaviorSubject, timeout, catchError, mergeMap } = rxjs;
+    BehaviorSubject, timeout, catchError, mergeMap, concatMap } = rxjs;
 
 const apiUrl = 'http://localhost:3030/upload';
 
@@ -72,24 +72,22 @@ const multiUpload = (dropAreaId: string, progressElementId: string) => {
                 progressElement.innerHTML = '';
             }),
             filter((event: DragEvent) => event.dataTransfer && event.dataTransfer.files.length > 0),
-            tap((event: DragEvent) => {
-                event.preventDefault();
-                const fileItems = Array.from(event.dataTransfer!.items).filter(
-                    (item) => item.kind === "file",
-                );
+            tap((event: DragEvent) => event.preventDefault()),
+            map((event: DragEvent) => {
+                const fileItems = Array.from(event.dataTransfer!.items).filter((item) => item.kind === "file");
                 if (fileItems.some((item) => item.type.startsWith("image/"))) {
                     event.dataTransfer!.dropEffect = "copy";
                 } else {
                     event.dataTransfer!.dropEffect = "none";
                 }
+                return event;
             }),
             map((event: DragEvent) => Array.from(event.dataTransfer!.items).map(file => file.getAsFile())),
-            mergeMap(files => files.map(file => file)),
-            map((file) => {
+            mergeMap((files: File[]) => files.map(file => {
                 const formData = new FormData();
                 formData.append('file', file, file.name);
                 return { formData, fileName: file.name };
-            }),
+            })),
             mergeMap(({ formData, fileName }) => ajax<any>({
                     url: `${apiUrl}`,
                     method: 'POST',

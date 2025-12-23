@@ -18,7 +18,7 @@ app.route('/upload')
         req.pipe(req.busboy);
         req.busboy.on('file', function (fieldname, file, fileDataObject) {
             console.log("Uploading: " + fileDataObject.filename);
-            if (fileDataObject.filename === 'Screenshot 2025-09-14 at 20.38.03.png') {
+            if (fileDataObject.filename === 'test.png') {
                 res.sendStatus(500);
                 return;
             }
