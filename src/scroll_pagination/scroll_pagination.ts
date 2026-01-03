@@ -1,6 +1,5 @@
-const { ajax } = rxjs.ajax;
-const { of, fromEvent, tap, filter, map,
-    timeout, catchError, concatMap, scan, startWith, takeWhile, debounceTime } = rxjs;
+import { ajax } from 'rxjs/ajax';
+import { of, fromEvent, tap, filter, map, timeout, catchError, concatMap, scan, startWith, takeWhile, debounceTime } from 'rxjs';
 
 const apiUrl = 'http://localhost:3000/posts';
 // GET /posts?_page=1&_per_page=5
@@ -90,5 +89,4 @@ const scrollPagination = (feedId: string) => {
     });
 };
 
-// @ts-ignore
-window.scrollPagination = scrollPagination;
+export { scrollPagination };

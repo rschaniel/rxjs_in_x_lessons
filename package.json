@@ -6,6 +6,7 @@
     "lint": "npx eslint src/rxjs_eslint/**/*.ts"
   },
   "dependencies": {
+    "@reactivex/rxjs": "^6.6.7",
     "body-parser": "^2.2.1",
     "connect-busboy": "^1.0.0",
     "cors": "^2.8.5",
