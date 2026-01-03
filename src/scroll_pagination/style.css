@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#feed {
+    margin-bottom: 20px;
+    min-height: 110vh;
+}
+
+.post {
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.spinner {
+    text-align: center;
+    padding: 30px;
+    visibility: hidden;
+}

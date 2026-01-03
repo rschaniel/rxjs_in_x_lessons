@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+    <h1>Feed</h1>
+    <article id="feed">
+        <div id="posts">
+
+        </div>
+        <div id="spinner" class="spinner">
+            ...loading
+        </div>
+    </article>
+</main>
+<script type="application/javascript" src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
+<script type="module" src="./scroll_pagination.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        scrollPagination('posts');
+    });
+</script>
+</body>
+</html>

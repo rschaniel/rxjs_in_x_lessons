@@ -1,0 +1,21 @@
+{
+  "posts": [
+    { "id": "1", "title": "Understanding RxJS Observables", "content": "Observables are the core of RxJS. They represent lazy push-based collections that can emit multiple values over time. Learn how to create and subscribe to observables." },
+    { "id": "2", "title": "Mastering RxJS Operators", "content": "Operators are the heart of RxJS. They allow you to transform, filter, and combine observables. Common operators include map, filter, switchMap, and mergeMap." },
+    { "id": "3", "title": "RxJS Subjects Explained", "content": "Subjects are special observables that act as both observers and observables. They can multicast to multiple subscribers and maintain state. Types include Subject, BehaviorSubject, and ReplaySubject." },
+    { "id": "4", "title": "Error Handling in RxJS", "content": "Learn how to handle errors in RxJS streams using catchError and retry operators. Proper error handling is crucial for building resilient reactive applications." },
+    { "id": "5", "title": "RxJS Subscription Management", "content": "Managing subscriptions is essential to prevent memory leaks. Use takeUntil, unsubscribe, or async pipe to properly clean up subscriptions when components are destroyed." },
+    { "id": "6", "title": "Hot vs Cold Observables", "content": "Cold observables create a new execution for each subscriber, while hot observables share a single execution. Understanding the difference is key to reactive programming." },
+    { "id": "7", "title": "RxJS Higher-Order Operators", "content": "Higher-order operators like switchMap, mergeMap, and concatMap flatten nested observables. Learn when to use each operator to handle asynchronous operations effectively." },
+    { "id": "8", "title": "Combining Observables with forkJoin", "content": "forkJoin waits for all observables to complete and emits their final values. It's perfect for parallel requests like loading multiple resources simultaneously." },
+    { "id": "9", "title": "RxJS Testing Strategies", "content": "Test RxJS code using TestScheduler for deterministic testing. Marbles notation allows you to write concise and readable tests for complex observable streams." },
+    { "id": "10", "title": "shareReplay for Caching", "content": "The shareReplay operator multicasts to subscribers and replays the last emitted value. Use it to cache HTTP responses and avoid duplicate network requests." },
+    { "id": "11", "title": "Building a Search Input with RxJS", "content": "Combine debounceTime, distinctUntilChanged, and switchMap to build an efficient search input. This pattern minimizes API calls while providing real-time results." },
+    { "id": "12", "title": "RxJS Memory Leaks Prevention", "content": "Avoid memory leaks by unsubscribing from observables, using takeUntil, or leveraging the async pipe in Angular. Profile your applications to detect subscription leaks early." },
+    { "id": "13", "title": "Side Effects with tap Operator", "content": "Use the tap operator to perform side effects without modifying the stream. It's useful for logging, debugging, and triggering other actions based on stream values." },
+    { "id": "14", "title": "Backpressure and Reactive Streams", "content": "Handle backpressure in RxJS by using operators like buffer, throttle, and audit. Learn how to manage fast-producing observables to prevent overwhelming consumers." },
+    { "id": "15", "title": "RxJS in Production Applications", "content": "Best practices for using RxJS in production include proper error handling, resource management, and testing. Follow patterns like smart and presentational components in Angular." },
+    { "id": "16", "title": "Schedulers in RxJS", "content": "Schedulers control the timing of observable emissions. Learn about asyncScheduler, asapScheduler, and queueScheduler to optimize performance in different scenarios." },
+    { "id": "17", "title": "Creating Custom Operators", "content": "Create custom operators using the pipe function to encapsulate complex logic. Custom operators promote code reuse and make streams more readable and maintainable." }
+  ]
+}
