@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Center</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+    <h1>Notifications</h1>
+    <article id="notifications">
+    </article>
+
+    <button id="createNotification">Create Notification</button>
+</main>
+<script type="module">
+    import { notificationCenter } from './notification_center.ts';
+    window.notificationCenter = notificationCenter;
+
+    window.addEventListener('load', function() {
+        notificationCenter('notifications');
+    });
+</script>
+</body>
+</html>

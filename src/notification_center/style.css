@@ -1,0 +1,14 @@
+#notifications {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    max-width: 400px;
+    font-family: Arial, sans-serif;
+}
+
+#createNotification {
+    margin-top: 50px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
