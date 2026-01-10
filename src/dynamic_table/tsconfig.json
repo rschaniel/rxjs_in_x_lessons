@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {    
+        "target": "es2015",
+        "module": "es2015",
+        "lib": ["es2015", "dom"],
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "strict": true
+    },
+    "include": [
+        "*.js",
+        "*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false
+}
