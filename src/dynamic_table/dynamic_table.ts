@@ -2,7 +2,8 @@ import {
     fromEvent,
     tap,
     ReplaySubject,
-    delay
+    delay,
+    Subscription
 } from 'rxjs';
 
 const FEATURES = [
@@ -26,7 +27,7 @@ const createAccordionCell = (featureId: string, featureName: string, productName
 const dynamicTable = (tableId: string) => {
     if (!tableId) {
         console.error('Elements not provided');
-        return;
+        return { unsubscribe: () => {} };
     }
 
     const tableElement = document.getElementById(tableId);
@@ -34,10 +35,11 @@ const dynamicTable = (tableId: string) => {
 
     if (!tableElement) {
         console.error('Some element not found in the DOM');
-        return;
+        return { unsubscribe: () => {} };
     }
 
     let productCount = 2; // Start with Product 1 and Product 2
+    const subscriptions = new Subscription();
 
     // ReplaySubject to store all toggle actions with infinite buffer
     interface FeatureAction {
@@ -118,7 +120,7 @@ const dynamicTable = (tableId: string) => {
 
     // Initial setup of click handlers
     removeAndCloneHeaders().forEach((header) => {
-        fromEvent(header, 'click').pipe(
+        const subscription = fromEvent(header, 'click').pipe(
             tap(() => {
                 const featureId = header.getAttribute('data-feature') || '';
                 const isCurrentlyOpen = header.classList.contains('open');
@@ -132,11 +134,12 @@ const dynamicTable = (tableId: string) => {
                 toggleFeatureInAllColumns(featureId, newIsOpen);
             })
         ).subscribe();
+        subscriptions.add(subscription);
     });
 
     // Handle add product button click
     if (addProductButton) {
-        fromEvent(addProductButton, 'click').pipe(
+        const addProductSubscription = fromEvent(addProductButton, 'click').pipe(
             tap(() => {
                 productCount++;
                 const productName = `Product ${productCount}`;
@@ -146,7 +149,7 @@ const dynamicTable = (tableId: string) => {
 
                 // Re-setup click handlers for all headers
                 removeAndCloneHeaders().forEach((header) => {
-                    fromEvent(header, 'click').pipe(
+                    const headerSubscription = fromEvent(header, 'click').pipe(
                         tap(() => {
                             const featureId = header.getAttribute('data-feature') || '';
                             const isCurrentlyOpen = header.classList.contains('open');
@@ -160,18 +163,24 @@ const dynamicTable = (tableId: string) => {
                             toggleFeatureInAllColumns(featureId, newIsOpen);
                         })
                     ).subscribe();
+                    subscriptions.add(headerSubscription);
                 });
 
                 // Replay all actions to the new column
-                featureActions$.pipe(
+                const replaySubscription = featureActions$.pipe(
                     delay(100),
                     tap(({ featureId, isOpen }) => {
                         toggleFeatureInColumn(newColumnIndex, featureId, isOpen);
                     })
                 ).subscribe();
+                subscriptions.add(replaySubscription);
             })
         ).subscribe();
+        subscriptions.add(addProductSubscription);
     }
+    return {
+        tearDown: () => subscriptions.unsubscribe()
+    };
 };
 
 export { dynamicTable };
